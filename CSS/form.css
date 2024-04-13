@@ -1,0 +1,67 @@
+.container {
+  width: 50%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flow;
+  margin: 0 auto;
+  border: #3498db 2px solid;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px #043a5e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #5c6bc0;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3f51b5;
+}
+
+.readonly {
+  pointer-events: none;
+  background-color: #d6d6d6;
+  color: #292929;
+  border-bottom: red 1px solid;
+}
+
+.coments {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-height: 100px; /* Altura mínima para mostrar varios renglones */
+  resize: vertical; /* Permite redimensionar verticalmente */
+  border-bottom: #3498db 2px solid;
+}
+

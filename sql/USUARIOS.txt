@@ -1,0 +1,13 @@
+Administrador: fab@gmail.com 123
+
+AREA DE MANTENIMIENTO
+Supervisor: perdomo@gmail.com 123	
+Tecnico: sisac@gmail.com 123
+
+AREA DE ALMACÉN
+Supervisor:cruz@gmail.com 123
+Empleado:efra@gmail.com 123
+
+AREA DE RECURSOS HUMANOS
+Supervisor:ernesto@gmail.com 123
+Empleado: luis@gmail.com 123
