@@ -14,6 +14,7 @@ require '../../App/authentication.php';
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../../CSS/normalize.css">
 	<link rel="stylesheet" href="../../CSS/sidemenu.css">
+	<link rel="stylesheet" href="../../CSS/req-body.css">
 </head>
 
 <body>
@@ -111,189 +112,28 @@ require '../../App/authentication.php';
 
 	</div>
 	<main class="mainE">
+		<!-- Aqui inicia el contenido de la pagina --->
 		<div class="containerF">
-			<h1>Mi Área</h1>
+			<h1>Mi Area</h1>
 		</div>
-		<div class="containerH">
-			<h2>Solicitudes entrantes</h2>
+		<br>
+		<div class="containerMain">
+			<div class="content-section">
+				<img src="../../img/recibir.png" alt="Solicitudes entrantes">
+				<h2>Solicitudes entrantes:</h2>
+				<div class="content-button">
+				<a href="../General/solicitudesEntrantes.php" class="cata">Solicitudes entrantes</a>
+				</div>
+			</div>
+			<div class="content-section">
+				<img src="../../img/curso.png" alt="Solicitudes en curso">
+				<h2>Solicitudes en curso:</h2>
+				<div class="content-button">
+				<a href="../General/solicitudesEnCurso.php" class="cata">Solicitudes en curso</a>
+				</div>
+			</div>
 		</div>
-		<?php
-		include("../../Data/Requisicion.php");
-		$miobjeto = new Requisicion();
-		$idDepartamento = $_SESSION['departamento'];
-		$dataset = $miobjeto->getSolicitudesPorDepa($idDepartamento); ?>
-		<table class="containerT">
-			<tr>
-				<th>
-					<h1>Número de Solicitud</h1>
-				</th>
-				<th>
-					<h1>Fecha de Creación</h1>
-				</th>
-				<th>
-					<h1>Estado de la Solicitud</h1>
-				</th>
-				<th>
-					<h1>Motivo</h1>
-				</th>
-				<th>
-					<h1>Comentario</h1>
-				</th>
-				<th>
-					<h1>Usuario Solicitante</h1>
-				</th>
-				<th>
-					<h1>Producto Solicitado</h1>
-				</th>
-				<?php if ($idDepartamento == 2) { ?>
-					<th>
-						<h1>Cantidad</h1>
-					</th>
-				<?php } ?>
-				<th>
-					<h1>Prioridad de la Solicitud</h1>
-				</th>
-				<th>
-					<h1>Acciones</h1>
-				</th>
-			</tr>
-			<?php
-			while ($tupla = mysqli_fetch_assoc($dataset)) {
-				if ($tupla['estadoSolicitud'] == 'Autorizado') {
-			?>
-					<tr>
-						<td> <?php echo $tupla['idSolicitud']; ?> </td>
-						<td> <?php echo $tupla['fechaSolicitud']; ?> </td>
-						<td> <?php echo $tupla['estadoSolicitud']; ?> </td>
-						<td> <?php echo $tupla['justificacion']; ?> </td>
-						<td> <?php echo $tupla['comentario']; ?> </td>
-						<td> <?php echo $miobjeto->getNombreCompletoUsuario($tupla['idSolicitudUser']); ?></td>
-						<td> <?php echo $miobjeto->getNombreProducto($tupla['idSolicitudProducto']); ?> </td>
-						<?php if ($idDepartamento == 2) { ?>
-							<td> <?php echo $tupla['cantidad']; ?> </td>
-						<?php } ?>
-						<td> <?php echo $miobjeto->getNombrePrioridad($tupla['idPrioridad']); ?> </td>
-						<td class="actions">
-							<form method="get" action="../../Data/solicitudLista.php">
-								<input type="hidden" name="idSolicitud" value="<?php echo $tupla['idSolicitud']; ?>">
-								<input type="submit" value="Listo" class="edit-btn" onmouseover="mostrarMensaje('<?php echo $tupla['idSolicitud']; ?>')" onmouseout="ocultarMensaje('<?php echo $tupla['idSolicitud']; ?>')">
-								<div id="mensaje-<?php echo $tupla['idSolicitud']; ?>" style="display: none;">¡Listo para entregar!</div>
-							</form>
-						</td>
-						<script>
-							function mostrarMensaje(id) {
-								document.getElementById('mensaje-' + id).style.display = 'block';
-							}
-
-							function ocultarMensaje(id) {
-								document.getElementById('mensaje-' + id).style.display = 'none';
-							}
-						</script>
-					</tr>
-			<?php
-				}
-			}
-			?>
-		</table>
-		</div>
-		<div class="containerH">
-			<h2>En curso</h2>
-		</div>
-		<table class="containerT">
-			<tr>
-				<th>
-					<h1>Número de Solicitud</h1>
-				</th>
-				<th>
-					<h1>Fecha de Creación</h1>
-				</th>
-				<th>
-					<h1>Estado de la Solicitud</h1>
-				</th>
-				<th>
-					<h1>Motivo</h1>
-				</th>
-				<th>
-					<h1>Comentario</h1>
-				</th>
-				<th>
-					<h1>Usuario Solicitante</h1>
-				</th>
-				<th>
-					<h1>Producto Solicitado</h1>
-				</th>
-				<?php if ($idDepartamento == 2) { ?>
-					<th>
-						<h1>Cantidad</h1>
-					</th>
-				<?php } ?>
-				<th>
-					<h1>Prioridad de la Solicitud</h1>
-				</th>
-				<th>
-					<h1>Acciones</h1>
-				</th>
-			</tr>
-			<?php
-			$dataset = $miobjeto->getSolicitudesPorDepa($idDepartamento);
-			while ($tupla = mysqli_fetch_assoc($dataset)) {
-				if ($tupla['estadoSolicitud'] == 'Lista para Recoger' || $tupla['estadoSolicitud'] == 'En Prestamo') {
-			?>
-					<tr>
-						<td> <?php echo $tupla['idSolicitud']; ?> </td>
-						<td> <?php echo $tupla['fechaSolicitud']; ?> </td>
-						<td> <?php echo $tupla['estadoSolicitud']; ?> </td>
-						<td> <?php echo $tupla['justificacion']; ?> </td>
-						<td> <?php echo $tupla['comentario']; ?> </td>
-						<td> <?php echo $miobjeto->getNombreCompletoUsuario($tupla['idSolicitudUser']); ?></td>
-						<td> <?php echo $miobjeto->getNombreProducto($tupla['idSolicitudProducto']); ?> </td>
-						<?php if ($idDepartamento == 2) { ?>
-							<td> <?php echo $tupla['cantidad']; ?> </td>
-						<?php } ?>
-						<td> <?php echo $miobjeto->getNombrePrioridad($tupla['idPrioridad']); ?> </td>
-						<?php if ($tupla['tipoEntrega'] == 'Retornable' && $tupla['estadoSolicitud'] == 'Lista para Recoger') { ?>
-							<td class="actions">
-								<form method="get" action="../../Data/prestamoRequisicionUsuario.php">
-									<input type="hidden" name="idSolicitud" value="<?php echo $tupla['idSolicitud']; ?>">
-									<input type="hidden" name="idSolicitudUser" value="<?php echo $tupla['idSolicitudUser']; ?>">
-									<input type="submit" value="Prestar" class="edit-btn" onmouseover="mostrarMensaje('<?php echo $tupla['idSolicitud']; ?>')" onmouseout="ocultarMensaje('<?php echo $tupla['idSolicitud']; ?>')">
-									<div id="mensaje-<?php echo $tupla['idSolicitud']; ?>" style="display: none;">¡Marcalo como prestado!</div>
-								</form>
-							</td>
-							<script>
-								function mostrarMensaje(id) {
-									document.getElementById('mensaje-' + id).style.display = 'block';
-								}
-
-								function ocultarMensaje(id) {
-									document.getElementById('mensaje-' + id).style.display = 'none';
-								}
-							</script>
-						<?php } else { ?>
-							<td class="actions">
-								<form method="get" action="../../Data/autorizarRequisicionUsuario.php">
-									<input type="hidden" name="idSolicitud" value="<?php echo $tupla['idSolicitud']; ?>">
-									<input type="hidden" name="idSolicitudUser" value="<?php echo $tupla['idSolicitudUser']; ?>">
-									<input type="submit" value="Completado" class="edit-btn" onmouseover="mostrarMensaje('<?php echo $tupla['idSolicitud']; ?>')" onmouseout="ocultarMensaje('<?php echo $tupla['idSolicitud']; ?>')">
-									<div id="mensaje-<?php echo $tupla['idSolicitud']; ?>" style="display: none;">¡Marcalo como recibido!</div>
-								</form>
-							</td>
-							<script>
-								function mostrarMensaje(id) {
-									document.getElementById('mensaje-' + id).style.display = 'block';
-								}
-
-								function ocultarMensaje(id) {
-									document.getElementById('mensaje-' + id).style.display = 'none';
-								}
-							</script>
-					</tr>
-		<?php
-						}
-					}
-				}
-		?>
-		</table>
 	</main>
 </body>
-</htm
+
+</html>

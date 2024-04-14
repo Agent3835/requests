@@ -70,7 +70,7 @@ public function setUsuario($archivo){
     return $newid;
 }
 public function getNotificaciones($user_id){
-    $query = "SELECT * FROM notificaciones WHERE idDestinatario = $user_id";
+    $query = "SELECT * FROM notificaciones WHERE idDestinatario = $user_id ORDER BY fecha DESC";
     $result = $this->connect();
     if ($result){
         $dataset = $this->execquery($query);

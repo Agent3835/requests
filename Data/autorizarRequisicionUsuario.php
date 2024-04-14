@@ -8,7 +8,6 @@ if (isset($_GET['idSolicitud']) && isset($_GET['idSolicitudUser'])) {
     echo $idSolicitud;
     echo $id_user;
     $miobjeto->autorizarSolicitudUsuario($_GET['idSolicitud'], $_GET['idSolicitudUser']); // Llamada al método autorizarSolicitud
-    header('Location: ../View/General/miarea.php');
+    header('Location: ../View/General/solicitudesEnCurso.php');
     exit();
 }
-?>

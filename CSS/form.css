@@ -55,6 +55,8 @@ input[type="submit"]:hover {
   border-bottom: red 1px solid;
 }
 
+/* estilo para los comentarios de los formularios */
+
 .coments {
   margin-top: 10px;
   padding: 10px;
@@ -62,6 +64,20 @@ input[type="submit"]:hover {
   border-radius: 5px;
   min-height: 100px; /* Altura mínima para mostrar varios renglones */
   resize: vertical; /* Permite redimensionar verticalmente */
-  border-bottom: #3498db 2px solid;
 }
 
+.coments:focus {
+  border: 1px solid #5c6bc0;
+}
+
+.coments:hover {
+  border: 1px solid #5c6bc0;
+}
+
+/* estilo para los mensajes de error */
+
+.fill-form {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

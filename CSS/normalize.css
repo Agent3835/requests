@@ -40,42 +40,62 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
- .containerF {
-  text-align: center; /* Centra el contenido del contenedor */
-  padding: 20px; /* Agrega espaciado alrededor del título */
-  background-color: white; /* Color de fondo del contenedor */
-  border-bottom: 2px solid #ccc; /* Borde inferior para separarlo del contenido */
-  margin-bottom: 40px; /* Margen inferior para separarlo del contenedor siguiente */
+.containerF {
+  text-align: center;
+  /* Centra el contenido del contenedor */
+  padding: 20px;
+  /* Agrega espaciado alrededor del título */
+  background-color: white;
+  /* Color de fondo del contenedor */
+  border-bottom: 2px solid #ccc;
+  /* Borde inferior para separarlo del contenido */
+  margin-bottom: 40px;
+  /* Margen inferior para separarlo del contenedor siguiente */
 }
 
 .containerF h1 {
-  font-size: 24px; /* Tamaño de fuente del título */
-  color: #333; /* Color del texto del título */
-  text-transform: uppercase; /* Convierte el texto del título a mayúsculas */
-  margin: 0; /* Elimina el margen predeterminado del título */
+  font-size: 24px;
+  /* Tamaño de fuente del título */
+  color: #333;
+  /* Color del texto del título */
+  text-transform: uppercase;
+  /* Convierte el texto del título a mayúsculas */
+  margin: 0;
+  /* Elimina el margen predeterminado del título */
 }
 
 .containerH {
-  text-align: center; /* Centra el contenido del contenedor */
-  padding: 15px; /* Agrega espaciado alrededor del título */
-  background-color: #f8f8f8; /* Color de fondo del contenedor */
-  border: 2px solid #ddd; /* Borde alrededor del contenedor */
-  margin-top: 20px; /* Margen superior para separarlo del contenedor anterior */
-  margin-bottom: 20px; /* Margen inferior para separarlo del contenedor siguiente */
+  text-align: center;
+  /* Centra el contenido del contenedor */
+  padding: 15px;
+  /* Agrega espaciado alrededor del título */
+  background-color: #f8f8f8;
+  /* Color de fondo del contenedor */
+  border: 2px solid #ddd;
+  /* Borde alrededor del contenedor */
+  margin-top: 20px;
+  /* Margen superior para separarlo del contenedor anterior */
+  margin-bottom: 20px;
+  /* Margen inferior para separarlo del contenedor siguiente */
 }
 
 .containerH h2 {
-  font-size: 20px; /* Tamaño de fuente del título */
-  color: #666; /* Color del texto del título */
-  text-transform: uppercase; /* Convierte el texto del título a mayúsculas */
-  margin: 0; /* Elimina el margen predeterminado del título */
+  font-size: 20px;
+  /* Tamaño de fuente del título */
+  color: #666;
+  /* Color del texto del título */
+  text-transform: uppercase;
+  /* Convierte el texto del título a mayúsculas */
+  margin: 0;
+  /* Elimina el margen predeterminado del título */
 }
 
 
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-  display: inline-block; /* Convierte el h1 en un bloque en línea */
+  display: inline-block;
+  /* Convierte el h1 en un bloque en línea */
 }
 
 
@@ -791,20 +811,20 @@ template {
   height: auto;
 }
 
-  .content {
-    margin-top: 20px;
-  }
-  
-  .content h1 {
-    margin-top: 10px;
-    font-size: 24px; 
-    font-weight: bold; 
-  }
-  
-  .content p {
-    font-size: 16px; 
-    line-height: 1.5; 
-  }
+.content {
+  margin-top: 20px;
+}
+
+.content h1 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 .go-to-button {
   background-color: #008CBA;
@@ -866,6 +886,7 @@ template {
 .containerC h1 {
   text-align: center;
 }
+
 /*///////////////////////////////////////////////////////////////////////////////////*/
 
 .containerT th h1 {
@@ -890,6 +911,7 @@ template {
   margin: 0 auto;
   display: table;
   padding: 0 0 5em 0;
+  max-height: 100px;
 }
 
 .containerT td,
@@ -1079,7 +1101,7 @@ transition-timing-function: line;
   flex-direction: column;
   gap: 20px;
   height: 650px;
-  width: 500px; 
+  width: 500px;
   max-height: 700px;
   max-width: 1200px;
   margin: 0 auto;
@@ -1103,6 +1125,10 @@ transition-timing-function: line;
   text-align: center;
 }
 
+.content-section a {
+  text-decoration: none;
+}
+
 .content-button {
   display: flex;
   justify-content: center;
@@ -1119,5 +1145,3 @@ transition-timing-function: line;
   padding: 20px;
   max-width: 1200px;
 }
-
-

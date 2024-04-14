@@ -9,7 +9,7 @@ if (isset($_GET['idSolicitud'])) {
     $miTecnico = new Requisicion();
     $miTecnico->marcarListo($_GET['idSolicitud']);
     
-    header('Location: ../View/General/miarea.php');
+    header('Location: ../View/General/SolicitudesEntrantes.php');
     exit();
 }
 ?>

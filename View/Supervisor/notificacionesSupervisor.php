@@ -158,6 +158,8 @@ require '../../App/authentication.php';
 						<td> <?php echo $miobjeto->getNombreCompletoUsuario($tupla['idDestinatario']); ?></td>
 					</tr>
 					<?php } ?>
+				</tbody>
+		</table>
 	</main>
 </body>
 

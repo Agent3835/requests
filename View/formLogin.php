@@ -68,17 +68,14 @@
                                     <input placeholder="Ingrese su Usuario" type="text" id="email" name="txtUser" maxlength="20" minlength="2" required>
                                 </div>
                                 <div class="field padding-bottom--24">
-                                    <div class="grid--50-50">
-                                        <label for="contraseña">Contraseña</label>
+                                    <label for="contraseña">Contraseña</label>
+                                    <div class="field">
+                                        <input placeholder="Ingrese su contraseña" type="password" id="password" name="txtPassword" maxlength="20" minlength="2" required>
                                     </div>
-                                </div>
-                                <div class="field">
-                                    <input placeholder="Ingrese su contraseña" type="password" id="password" name="txtPassword" maxlength="20" minlength="2" required>
-                                </div>
-                                <div class="recaptcha-container">
-                                    <div class="g-recaptcha" data-sitekey="6LdMvrYpAAAAAIBLyvRkQD93XieC0jTX_drdelNN">
+                                    <div class="recaptcha-container">
+                                        <div class="g-recaptcha" data-sitekey="6LdMvrYpAAAAAIBLyvRkQD93XieC0jTX_drdelNN">
+                                        </div>
                                     </div>
-                                </div>
                                     <div class="error-message">
                                         <?php
                                         if (isset($_GET['error'])) {
